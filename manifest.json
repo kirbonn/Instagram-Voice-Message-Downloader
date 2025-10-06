@@ -1,0 +1,20 @@
+{
+  "manifest_version": 3,
+  "name": "Instagram Voice Message Downloader",
+  "description": "Download Instagram voice messages with ease.",
+  "version": "1.0",
+  "permissions": ["downloads", "storage", "webRequest"],
+  "host_permissions": ["https://www.instagram.com/*", "https://cdn.fbsbx.com/*"],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "action": {
+    "default_popup": "popup.html",
+    "default_icon": {
+      "16": "icon.png",
+      "32": "icon.png",
+      "48": "icon.png",
+      "128": "icon.png"
+    }
+  }
+}

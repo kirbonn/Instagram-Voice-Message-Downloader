@@ -1,0 +1,138 @@
+\<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Instagram Voice Downloader</title>
+    <style>
+        html, body {
+            border-radius: 12px;
+            overflow: hidden;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Helvetica Neue', sans-serif;
+            width: 320px;
+            padding: 16px;
+            background-color: #f5f5f7;
+            text-align: center;
+            margin: 0;
+            color: #1d1d1f;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+        }
+        
+        h3 {
+            margin: 0 0 16px 0;
+            font-weight: 600;
+            font-size: 19px;
+            color: #1d1d1f;
+        }
+        
+        .audio-list {
+            max-height: 250px;
+            overflow-y: auto;
+            background: white;
+            padding: 8px 0;
+            border-radius: 12px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+            margin-bottom: 16px;
+        }
+        
+        .audio-item {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 12px 16px;
+            border-bottom: 1px solid #f5f5f7;
+        }
+        
+        .audio-item:last-child {
+            border-bottom: none;
+        }
+        
+        .audio-item a {
+            text-decoration: none;
+            color: #1d1d1f;
+            font-weight: 500;
+            flex-grow: 1;
+            text-align: left;
+            font-size: 14px;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+        }
+        
+        .download-btn {
+            background: #0071e3;
+            color: white;
+            border: none;
+            padding: 6px 12px;
+            border-radius: 980px;
+            cursor: pointer;
+            font-size: 12px;
+            font-weight: 500;
+            transition: all 0.2s ease;
+        }
+        
+        .download-btn:hover {
+            background: #0077ED;
+            transform: scale(1.03);
+        }
+        
+        #clearStorage {
+            background: white;
+            color: #ff3b30;
+            border: 1px solid #ff3b30;
+            padding: 10px 16px;
+            border-radius: 980px;
+            cursor: pointer;
+            width: 100%;
+            font-size: 14px;
+            font-weight: 500;
+            transition: all 0.2s ease;
+        }
+        
+        #clearStorage:hover {
+            background: #fff1f0;
+        }
+        
+
+        .loading {
+            display: inline-block;
+            margin: 20px 0;
+            font-size: 14px;
+            color: #86868b;
+        }
+        
+        /* Empty state */
+        .empty-state {
+            padding: 30px 16px;
+            color: #86868b;
+            font-size: 14px;
+        }
+        
+
+        .audio-list::-webkit-scrollbar {
+            width: 8px;
+        }
+        
+        .audio-list::-webkit-scrollbar-track {
+            background: transparent;
+        }
+        
+        .audio-list::-webkit-scrollbar-thumb {
+            background-color: rgba(0, 0, 0, 0.2);
+            border-radius: 4px;
+        }
+    </style>
+</head>
+<body>
+    <h3>Voice Messages</h3>
+    <div class="audio-list" id="audioList">
+        <div class="loading">Loading...</div>
+    </div>
+    <button id="clearStorage">Clear All</button>
+
+    <script src="popup.js"></script>
+</body>
+</html>
